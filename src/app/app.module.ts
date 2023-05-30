@@ -6,12 +6,12 @@ import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import {HomeComponent} from "./pages/home/home.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
-// import {MatButtonModule} from '@angular/material/core';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 const routes: Routes = [
   {
@@ -40,6 +40,7 @@ const routes: Routes = [
     MatExpansionModule,
     MatIconModule,
     MatDividerModule,
+    MatToolbarModule,
 
   ],
   providers: [],

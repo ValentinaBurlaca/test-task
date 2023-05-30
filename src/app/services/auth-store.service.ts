@@ -34,4 +34,8 @@ export class AuthStoreService {
 
     localStorage.setItem(LocalstorageKeys.AccessToken, token);
   }
+
+  public logout(): void {
+    this.setAccessToken(null);
+  }
 }

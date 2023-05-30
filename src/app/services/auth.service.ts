@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, map} from "rxjs";
-import {Article} from "../intefaces";
+import {ApiRoutes} from "../api-routes";
+import {AuthStoreService} from "./auth-store.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {Article} from "../intefaces";
 export class AuthService {
   token: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authStore: AuthStoreService) {
     // @ts-ignore
     this.token = localStorage.getItem('token')
   }
@@ -28,6 +29,14 @@ export class AuthService {
     return this.http.get<any>('https://feed-api.nanoit.dev/api/articles', {headers: {
       authorization: `Bearer ${this.token}`
       }});
+  }
+
+  logout(): Observable<void> {
+    return this.http.post<void>(ApiRoutes.Logout, {}).pipe(
+      map(() => {
+        this.authStore.logout();
+      })
+    );
   }
 
 }

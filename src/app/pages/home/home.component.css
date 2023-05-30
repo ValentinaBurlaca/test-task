@@ -2,6 +2,17 @@
   color: #384955;
 }
 
+.mat-toolbar {
+  background-color: #D5B6C7;
+  color: #FFEEFF;
+}
+
+.header-container {
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .article-details {
   padding: 50px 80px;
   background: aliceblue;
@@ -43,10 +54,15 @@ h2 {
   margin-bottom: 20px;
 }
 
+button {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 @media screen and (max-width: 850px) {
   mat-icon {
     display: none;
   }
-
-
 }
+

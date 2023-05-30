@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Article} from "../../intefaces";
+import { PageRoutes } from 'src/app/page-routes';
 
 @Component({
   selector: 'app-home',
@@ -38,4 +39,14 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
+  get loginUrl(): string {
+    return PageRoutes.Login;
+  }
+
+  logout(): void {
+    this.articlesService.logout();
+  }
+
+
 }
