@@ -7,6 +7,11 @@ import {HomeComponent} from "./pages/home/home.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDividerModule} from "@angular/material/divider";
+// import {MatButtonModule} from '@angular/material/core';
 
 const routes: Routes = [
   {
@@ -25,13 +30,18 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterOutlet,
-        ReactiveFormsModule,
-        RouterModule.forRoot(routes),
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDividerModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

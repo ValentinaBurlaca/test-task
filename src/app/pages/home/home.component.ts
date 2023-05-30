@@ -10,12 +10,22 @@ import {Article} from "../../intefaces";
 export class HomeComponent implements OnInit {
   articles: Article[] = [];
 
+  step = 0;
 
   constructor(private articlesService: AuthService) {
   }
 
   ngOnInit() {
     this.getArticles();
+  }
+
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
   }
 
  getArticles() {
